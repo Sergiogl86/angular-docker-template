@@ -1,0 +1,24 @@
+# base image
+FROM node:16
+
+# set working directory
+RUN mkdir /app && chown node:node /app
+WORKDIR /app
+
+# add app
+USER node
+COPY --chown=node:node package.json package-lock.json* ./
+
+# install and cache app dependencies
+RUN yarn install
+RUN yarn add @angular/cli
+
+COPY --chown=node:node . .
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+EXPOSE 4200
+
+# start app
+CMD ng serve --host 0.0.0.0
