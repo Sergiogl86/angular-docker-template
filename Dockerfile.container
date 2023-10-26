@@ -7,16 +7,8 @@ WORKDIR /app
 
 # add app
 USER node
-COPY --chown=node:node package.json package-lock.json* ./
-
-# install and cache app dependencies
-RUN yarn install
-RUN yarn add @angular/cli
-
-COPY --chown=node:node . .
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
 EXPOSE 4200
-

@@ -10,8 +10,8 @@ USER node
 COPY --chown=node:node package.json package-lock.json* ./
 
 # install and cache app dependencies
-RUN yarn install
 RUN yarn add @angular/cli
+RUN yarn install
 
 COPY --chown=node:node . .
 

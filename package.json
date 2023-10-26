@@ -2,6 +2,7 @@
   "name": "angular-docker-template-ii",
   "version": "0.0.0",
   "scripts": {
+    "container-dependencies": "yarn add @angular/cli && yarn install",
     "ng": "ng",
     "start-dev": "ng serve --host 0.0.0.0",
     "start": "ng serve",
@@ -19,15 +20,13 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "chokidar": "^3.5.3",
-    "primeng": "^14.2.14-lts",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.7",
-    "@angular/cli": "^16.2.7",
+    "@angular/cli": "^16.2.8",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
